@@ -45,6 +45,7 @@ class Warrior(Character):
              damage= self.attack_power
              opponent.health -= damage # Do damage to the opponent equal to damage. 
              self.health += damage * 0.5 #Heal self equal for an ammount equal to damage. 
+             print(f"\n{self.name} strikes {opponent.name} and does {damage} damage!")
         # check if our current health exceeds our max health. 
         if self.health > self.max_health:
             self.health = self.max_health #If it does, forcibly set it to max health.
