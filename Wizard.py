@@ -33,7 +33,7 @@ class Warrior(Character):
 
     def special_ability(self, opponent):
         print("\nAbilities:")
-        print("1. Deadly Strke")
+        print("1. Deadly Strike")
         print("2. Vampiric Strike")
         action = input("\nWhich ability do you want to use?")
 
@@ -140,7 +140,7 @@ def create_character():
     elif class_choice == '3':
         return Rogue(name)
     elif class_choice == '4':
-       return Sorcerer(name)   #
+       return Sorcerer(name)   
     else:
         print("Invalid choice. Defaulting to Warrior.")
         return Warrior(name)
@@ -173,14 +173,14 @@ def battle(player, wizard):
         # Evil Wizard's turn to attack and regenerate
         if wizard.health > 0:
             print(f"\n--- {wizard.name}'s Turn --- ")
-            wizard.regenerate()
-            wizard.attack(player)
+            wizard.regenerate() # Wizard regenerates health each turn
+            wizard.attack(player) # Wizard attacks the player
 
-        if player.health <= 0:
+        if player.health <= 0: # Check if player is defeated
             print(f"{player.name} has been defeated!")
             break
 
-    if wizard.health <= 0:
+    if wizard.health <= 0: # Check if wizard is defeated
         print(f"The wizard {wizard.name} has been defeated by {player.name}!")
 
 # Main function to handle the flow of the game
@@ -189,7 +189,7 @@ def main():
     player = create_character()
 
     # Evil Wizard is created
-    wizard = EvilWizard("The Dark Wizard")
+    wizard = EvilWizard("The Evil Wizard")
 
     # Start the battle
     battle(player, wizard)
