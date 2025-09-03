@@ -140,7 +140,7 @@ def create_character():
     elif class_choice == '3':
         return Rogue(name)
     elif class_choice == '4':
-       return Sorcerer(name)   # Replace with actual class name
+       return Sorcerer(name)   #
     else:
         print("Invalid choice. Defaulting to Warrior.")
         return Warrior(name)
